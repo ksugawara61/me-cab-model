@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+require "me_cab_model"

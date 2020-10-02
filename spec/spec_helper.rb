@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "me_cab_model"
+require "natto_wrap"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

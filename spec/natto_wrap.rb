@@ -1,4 +1,4 @@
-RSpec.describe MeCabModel do
+RSpec.describe NattoWrap do
   it "has a version number" do
     expect(MeCabModel::VERSION).not_to be nil
   end

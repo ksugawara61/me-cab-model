@@ -1,8 +1,10 @@
 # NattoWrap
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/natto_wrap`. To experiment with that code, run `bin/console` for an interactive prompt.
+NattoWrap is lightweight wrapper library for using **natto**.
+It is useful for extracting nouns, converting to MeCabModels and so on from sentences.
+To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+original natto library is at https://github.com/buruzaemon/natto
 
 ## Installation
 
@@ -22,7 +24,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'natto_wrap'
+
+puts NattoWrap::MeCabModel.to_reading('今日は晴です')
+
+キョウハハレデス
+
+
+puts NattoWrap::MeCabModel.extract_nouns('今日は晴です').map(&:word)
+
+今日
+晴
+
+
+models = NattoWrap::MeCabModel.convert_model('今日は晴です')
+puts models.map { |model| model.to_csv.join(',') }
+
+今日,0,0,0,名詞,副詞可能,*,*,*,*,今日,キョウ,キョー
+は,0,0,0,助詞,係助詞,*,*,*,*,は,ハ,ワ
+晴,0,0,0,名詞,一般,*,*,*,*,晴,ハレ,ハレ
+です,0,0,0,助動詞,*,*,*,特殊・デス,基本形,です,デス,デス
+```
 
 ## Development
 
@@ -32,12 +55,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/natto_wrap. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ksugawara61/natto_wrap. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the MeCabModel project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/natto_wrap/blob/master/CODE_OF_CONDUCT.md).

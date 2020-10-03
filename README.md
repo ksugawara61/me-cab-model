@@ -1,5 +1,7 @@
 # NattoWrap
 
+[![Ruby](https://github.com/ksugawara61/natto_wrap/workflows/Ruby/badge.svg?branch=main)](https://github.com/ksugawara61/natto_wrap/actions) [![Gem Version](https://badge.fury.io/rb/natto_wrap.svg)](https://badge.fury.io/rb/natto_wrap)
+
 NattoWrap is lightweight wrapper library for using **natto**.
 It is useful for extracting nouns, converting to MeCabModels and so on from sentences.
 To experiment with that code, run `bin/console` for an interactive prompt.
